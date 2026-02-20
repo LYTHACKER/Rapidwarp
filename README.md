@@ -1,4 +1,3 @@
-
 ```markdown
 # RapidWarp Desktop
 
@@ -138,26 +137,4 @@ Find RapidWarp Desktop's data path by using the list below or by clicking "?" in
 
 Create the file userscript.js in this folder to configure custom JS. Create the file userstyle.css in this folder to configure custom CSS. Completely restart RapidWarp Desktop (including all windows) to apply.
 
-Uninstall
-
-See https://desktop.rapidwarp.org/uninstall
-
 ```
-
-## How to use this:
-
-1. **Copy all the text above** (click and drag, then Ctrl+C)
-2. **Open your README.md file:**
-   ```bash
-   notepad C:\Users\User\Desktop\turbowarp-desktop\README.md
-```
-
-1. Select All (Ctrl+A) and Paste (Ctrl+V)
-2. Save (Ctrl+S) and close Notepad
-3. Update on GitHub:
-   ```bash
-   cd C:\Users\User\Desktop\turbowarp-desktop
-   git add README.md
-   git commit -m "Rebranded to RapidWarp"
-   git push myrepo main
-   ```
