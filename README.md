@@ -3,15 +3,9 @@
 
 RapidWarp as a desktop app.
 
-If you're looking for downloads, head to: https://desktop.rapidwarp.org/
-
 Licensed under the GPLv3.0. See LICENSE for more information.
 
 Parts of this repository are based on [LLK/scratch-desktop](https://github.com/LLK/scratch-desktop).
-
-## Website
-
-The website source code is in the `docs` folder.
 
 ## Development
 
@@ -113,14 +107,6 @@ npx electron-builder --linux deb
 
 You can typically only package for a certain operating system while on that operating system.
 
-Code signing policy
-
-RapidWarp Desktop uses a free code signing provided by SignPath.io, certificate by SignPath Foundation.
-
-· Approvers:
-  · GarboMuffin
-· Privacy policy: https://desktop.rapidwarp.org/privacy.html
-
 Advanced customizations
 
 RapidWarp Desktop lets you configure custom JS and CSS without rebuilding the app.
@@ -136,5 +122,3 @@ Find RapidWarp Desktop's data path by using the list below or by clicking "?" in
 · Linux (Snap): ~/snap/rapidwarp-desktop/current/.config/rapidwarp-desktop
 
 Create the file userscript.js in this folder to configure custom JS. Create the file userstyle.css in this folder to configure custom CSS. Completely restart RapidWarp Desktop (including all windows) to apply.
-
-```
