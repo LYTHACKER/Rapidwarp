@@ -14,7 +14,7 @@ class ExtensionDocumentationWindow extends AbstractWindow {
     this.window.on('page-title-updated', (event, newTitle) => {
       event.preventDefault();
 
-      // Window title will be like "Simple 3D - TurboWarp Extension Documentation"
+      // Window title will be like "Simple 3D - RapidWarp Extension Documentation"
       // We want to replace the last part with the translated string from desktop app resources
       newTitle = newTitle.replace(/-[^-]+$/, `- ${title}`);
       this.window.setTitle(newTitle);
@@ -40,7 +40,7 @@ class ExtensionDocumentationWindow extends AbstractWindow {
   }
 
   /**
-   * @param {string} path Path part of an https://extensions.turbowarp.org URL, without leading /
+   * @param {string} path Path part of an https://extensions.rapidwarp.org URL, without leading /
    */
   static open(path) {
     const windows = AbstractWindow.getWindowsByClass(ExtensionDocumentationWindow);

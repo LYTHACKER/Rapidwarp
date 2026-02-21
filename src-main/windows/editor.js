@@ -118,7 +118,7 @@ const parseOpenedFile = (file, workingDirectory) => {
 
       // Need to manually redirect extension samples to the copies we already have offline as the
       // fetching code will not go through web request handlers or custom protocols.
-      const sampleMatch = file.match(/^https?:\/\/extensions\.turbowarp\.org\/samples\/(.+\.sb3)$/);
+      const sampleMatch = file.match(/^https?:\/\/extensions\.rapidwarp\.org\/samples\/(.+\.sb3)$/);
       if (sampleMatch) {
         return new OpenedFile(TYPE_SAMPLE, decodeURIComponent(sampleMatch[1]));
       }
@@ -171,14 +171,14 @@ const getUnsafePaths = () => {
       app: APP_NAME,
     },
 
-    // TurboWarp Desktop defaults
+    // RapidWarp Desktop defaults
     {
-      path: path.join(appData, 'turbowarp-desktop'),
-      app: 'TurboWarp Desktop'
+      path: path.join(appData, 'rapidwarp-desktop'),
+      app: 'RapidWarp Desktop'
     },
     {
-      path: path.join(localPrograms, 'TurboWarp'),
-      app: 'TurboWarp Desktop'
+      path: path.join(localPrograms, 'RapidWarp'),
+      app: 'RapidWarp Desktop'
     },
 
     // Scratch Desktop defaults
@@ -251,7 +251,7 @@ class EditorWindow extends ProjectRunningWindow {
     let processingWillPreventUnload = false;
     this.window.webContents.on('will-prevent-unload', () => {
       // Using showMessageBoxSync synchronously in the event handler causes broken focus on Windows.
-      // See https://github.com/TurboWarp/desktop/issues/1245
+      // See https://github.com/RapidWarp/desktop/issues/1245
       // To work around that, we won't cancel that will-prevent-unload event so the window stays
       // open. After a very short delay to let focus get fixed, we'll show a dialog and force close
       // the window ourselves if the user wants.
@@ -627,7 +627,7 @@ class EditorWindow extends ProjectRunningWindow {
 
     // Open extension documentation in-app
     const extensionsDocsMatch = details.url.match(
-      /^https:\/\/extensions\.turbowarp\.org\/([\w_\-.\/]+)$/
+      /^https:\/\/extensions\.rapidwarp\.org\/([\w_\-.\/]+)$/
     );
     if (extensionsDocsMatch) {
       ExtensionDocumentationWindow.open(extensionsDocsMatch[1]);

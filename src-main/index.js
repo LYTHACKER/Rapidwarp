@@ -32,7 +32,7 @@ if (!settings.hardwareAcceleration) {
   // to work without hardware acceleration, so adding this flag will be
   // required. Google considers this dangerous, so only add the flag when it is
   // needed.
-  // https://github.com/TurboWarp/desktop/issues/1158
+  // https://github.com/RapidWarp/desktop/issues/1158
   // https://chromestatus.com/feature/5166674414927872
   // https://chromium.googlesource.com/chromium/src/+/main/docs/gpu/swiftshader.md
   app.commandLine.appendSwitch('enable-unsafe-swiftshader');
@@ -196,7 +196,7 @@ app.on('open-file', (event, path) => {
  */
 const parseCommandLine = (argv) => {
   // argv could be any of:
-  // turbowarp.exe project.sb3
+  // rapidwarp.exe project.sb3
   // electron.exe --inspect=sdf main.js project.sb3
   // electron.exe main.js project.sb3
 
@@ -204,9 +204,9 @@ const parseCommandLine = (argv) => {
     // Remove --inspect= and other flags
     .filter((i) => !i.startsWith('--'))
     // Ignore macOS process serial number argument eg. "-psn_0_98328"
-    // https://github.com/TurboWarp/desktop/issues/939
+    // https://github.com/RapidWarp/desktop/issues/939
     .filter((i) => !i.startsWith('-psn_'))
-    // Remove turbowarp.exe, electron.exe, etc. and the path to the app if it exists
+    // Remove rapidwarp.exe, electron.exe, etc. and the path to the app if it exists
     // defaultApp is true when the path to the app is in argv
     .slice(process.defaultApp ? 2 : 1);
 
@@ -256,7 +256,7 @@ app.whenReady().then(() => {
       .catch((error) => {
         // We don't want to show a full error message when updates couldn't be fetched.
         // The website might be down, the internet might be broken, might be a school
-        // network that blocks turbowarp.org, etc.
+        // network that blocks rapidwarp.org, etc.
         console.error('Error checking for updates:', error);
       });
   });

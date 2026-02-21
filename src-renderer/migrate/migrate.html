@@ -114,7 +114,7 @@
       <div class="error-next-steps" hidden>
         <p>
           <span class="error-message"></span>
-          <a href="mailto:contact@turbowarp.org">contact@turbowarp.org</a>
+          <a href="mailto:contact@rapidwarp.org">contact@rapidwarp.org</a>
         </p>
         <button class="continue-anyways"></button>
       </div>
@@ -122,7 +122,7 @@
       <div class="timed-out-next-steps" hidden>
         <p>
           <span class="timed-out-message"></span>
-          <a href="mailto:contact@turbowarp.org">contact@turbowarp.org</a>
+          <a href="mailto:contact@rapidwarp.org">contact@rapidwarp.org</a>
         </p>
         <button class="continue-anyways"></button>
       </div>
@@ -139,7 +139,7 @@
       tw:addons -> tw-editor
       tw:language -> tw-editor
       tw:username -> tw-editor
-      extensions.turbowarp.org/local-storage: -> tw-editor
+      extensions.rapidwarp.org/local-storage: -> tw-editor
       SelectProject.type -> tw-packager
       SelectProject.id -> tw-packager
       PackagerOptions.* -> tw-packager
@@ -256,7 +256,7 @@
       const migrateEditor = async () => {
         const storage = {};
         for (const key of Object.keys(localStorage)) {
-          if (key === 'tw:theme' || key === 'tw:addons' || key === 'tw:language' || key === 'tw:username' || key.startsWith('extensions.turbowarp.org/local-storage:')) {
+          if (key === 'tw:theme' || key === 'tw:addons' || key === 'tw:language' || key === 'tw:username' || key.startsWith('extensions.rapidwarp.org/local-storage:')) {
             storage[key] = localStorage[key];
           }
         }

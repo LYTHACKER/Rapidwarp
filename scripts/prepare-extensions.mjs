@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import fsPromises from 'node:fs/promises';
 import { promisify } from 'node:util';
 import zlib from 'node:zlib';
-import Builder from '@turbowarp/extensions/builder';
+import Builder from '@rapidwarp/extensions/builder';
 
 const mode = 'desktop';
 const builder = new Builder(mode);
