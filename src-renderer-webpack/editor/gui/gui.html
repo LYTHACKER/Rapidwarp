@@ -43,6 +43,7 @@
     </style>
   </head>
   <body>
+    <link rel="stylesheet" href="purple-theme.css">
     <div class="splash-screen" id="spash-waiting-for-js" hidden>
       <div class="splash-spinner"></div>
     </div>
@@ -64,11 +65,8 @@
         } else if (themeSetting) {
           try {
             var parsed = JSON.parse(themeSetting);
-            if (parsed.accent === 'purple') {
-              accent = '#855cd6';
-            } else if (parsed.accent === 'blue') {
-              accent = '#4c97ff';
-            }
+            // Force purple accent regardless of user setting
+            accent = '#a734c5';
             if (parsed.gui === 'dark' || parsed.gui === 'light') {
               theme = parsed.gui;
             }
@@ -87,6 +85,39 @@
           splash.style.backgroundColor = accent;
         }
         splash.hidden = false;
+
+        // Force purple theme by overriding CSS custom properties
+        var root = document.documentElement;
+        root.style.setProperty('--accent-primary', '#a734c5', 'important');
+        root.style.setProperty('--accent-secondary', '#a734c5', 'important');
+        root.style.setProperty('--looks-primary', '#a734c5', 'important');
+        root.style.setProperty('--looks-secondary', '#a734c5', 'important');
+        root.style.setProperty('--selection-color', '#a734c5', 'important');
+        root.style.setProperty('--block-default-text-color-on-dark', '#a734c5', 'important');
+        root.style.setProperty('--block-default-text-color-on-light', '#a734c5', 'important');
+
+        // Override any computed styles that are still red
+        setTimeout(function() {
+          var allElements = document.querySelectorAll('*');
+          for (var i = 0; i < allElements.length; i++) {
+            var element = allElements[i];
+            var computedStyle = window.getComputedStyle(element);
+            var backgroundColor = computedStyle.backgroundColor;
+            var borderColor = computedStyle.borderColor;
+            var color = computedStyle.color;
+            
+            // Check if color is red and override it
+            if (backgroundColor.includes('255, 0, 0') || backgroundColor.includes('#ff') || backgroundColor.includes('red')) {
+              element.style.setProperty('background-color', '#a734c5', 'important');
+            }
+            if (borderColor.includes('255, 0, 0') || borderColor.includes('#ff') || borderColor.includes('red')) {
+              element.style.setProperty('border-color', '#a734c5', 'important');
+            }
+            if (color.includes('255, 0, 0') || color.includes('#ff') || color.includes('red')) {
+              element.style.setProperty('color', '#a734c5', 'important');
+            }
+          }
+        }, 1000);
       })();
     </script>
 
