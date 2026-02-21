@@ -1,6 +1,6 @@
-const PLATFORM_NAME = 'TurboWarp';
-const APP_NAME = 'TurboWarp Desktop';
-const PACKAGER_NAME = 'TurboWarp Packager';
+const PLATFORM_NAME = 'RapidWarp';
+const APP_NAME = 'RapidWarp Desktop';
+const PACKAGER_NAME = 'RapidWarp Packager';
 
 module.exports = {
   PLATFORM_NAME,
